@@ -1,8 +1,6 @@
-local c = getChar()
-        plr.Character = nil
-        plr.Character = c
-        wait(players.RespawnTime - .1)
-        local old = c.HumanoidRootPart.CFrame
-        c.Humanoid.Health = 0
-        plr.CharacterAdded:Wait()
-        getChar():WaitForChild("HumanoidRootPart").CFrame = old
+game.Players.LocalPlayer.Character.Head:Destroy()
+if game.Players.LocalPlayer.Character.Humanoid.Health < 5 then 
+    local deathmanok = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").position
+    wait(1.5)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(deathmanok)
+end
